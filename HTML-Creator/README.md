@@ -1,3 +1,35 @@
+# Welcome to our Web Services Final Project!
+For our project we had to create a web service API that performed some task.
+We decided to create a service that automatically generates HTML documents containing information provided by the client.<br>
+<br>
+The second part of our project involved working with another team that would create a client for our API.
+
+## Installation instructions (Windows):
+
+This project is created using the Laravel PHP framework, which is run differently from our typical XAMPP applications we've creared in class.
+<br><br>
+Feel free to clone this project anywhere, as it does not need to be inside an 'htdocs' folder.
+<br><br>
+Composer and PHP are required to run this project, please make sure you have both before continuing.
+<br><br>
+- After cloning, please cd into the directory and run ``` composer install ```
+- Next, please open phpmyadmin and create a new database called 'html_creator'
+- In the laravel project, copy the file '.env.example' to a file just called '.env'
+- In '.env', change DB_DATABASE from 'laravel' to 'html_creator'
+- Run the command ``` php artisan key:generate ```
+- To create the database, run ``` php artisan migrate ```
+- Finally, to start the application, run ``` php artisan serve ```
+- To stop the server, simply type Ctrl + C
+
+## Contributors:
+
+- Peter Parthimos
+- Thomas Meyer
+<br><br><br><br>
+
+---
+### Auto Generated Laravel README:
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
