@@ -4,33 +4,32 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequestsTable extends Migration
+class CreateClientRequestsTable extends Migration
 {
     /**
-     * Run the migrations
-     * 
+     * Run the migrations.
+     *
      * @return void
      */
-    public function up() 
+    public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('client_requests', function (Blueprint $table) {
             $table->id('requestID');
             $table->string('title');
             $table->string('body');
             $table->string('image')->nullable();
             $table->integer('template');
             $table->timestamp('timestamp');
-            //$table->foreign('clientID')->references('clientID')->on('clients');
         });
     }
 
     /**
-     * Reverse the migrations
-     * 
+     * Reverse the migrations.
+     *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('requests');
+        Schema::dropIfExists('client_requests');
     }
 }
