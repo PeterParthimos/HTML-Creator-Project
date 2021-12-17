@@ -13,9 +13,4 @@ class ClientRequest extends Model
     protected $fillable = [
         'title', 'body', 'template', 'timestamp'
     ];
-
-    public $title = 'default';
-    public $body = 'default';
-    public $template = 1;
-    public $timestamp;
 }

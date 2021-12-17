@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientRequestController;
+use App\Models\ClientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
