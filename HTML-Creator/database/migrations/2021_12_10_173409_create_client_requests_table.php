@@ -15,9 +15,9 @@ class CreateClientRequestsTable extends Migration
     {
         Schema::create('client_requests', function (Blueprint $table) {
             $table->id('requestID');
+            $table->string('author');
             $table->string('title');
             $table->string('body');
-            $table->string('image')->nullable();
             $table->integer('template');
             $table->timestamp('timestamp');
         });

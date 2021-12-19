@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateFinalResponsesTable extends Migration
 {
     /**
-     * Run the migrations
+     * Run the migrations.
      *
      * @return void
      */
@@ -15,18 +15,20 @@ class CreateFinalResponsesTable extends Migration
     {
         Schema::create('final_responses', function (Blueprint $table) {
             $table->id('responseID');
-            $table->string('resFile');
-            //$table->foreign('requestID')->references('requestID')->on('requests');
+            $table->integer('requestID');
+            $table->string('filename');
+            $table->string('url');
+            $table->timestamp('timestamp');
         });
     }
 
     /**
-     * Reverse the migrations
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('requests');
+        Schema::dropIfExists('final_responses');
     }
 }

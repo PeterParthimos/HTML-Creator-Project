@@ -13,16 +13,20 @@ class ClientRequestController extends Controller
 
     public function newRequest() {
         \request()->validate([
+            'author' => 'required',
             'title' => 'required',
             'body' => 'required',
             'template' => 'required',
         ]);
 
-        return ClientRequest::create([
+        $request = ClientRequest::create([
+            'author' => \request('author'),
             'title' => \request('title'),
             'body' => \request('body'),
             'template' => \request('template'),
             'timestamp' => date('Y-m-d h:i:s')
         ]);
+
+        return $request->generate();
     }
 }
