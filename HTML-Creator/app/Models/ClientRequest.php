@@ -11,7 +11,7 @@ class ClientRequest extends Model
     use HasFactory;
 
     protected $fillable = [
-        'author', 'title', 'body', 'template', 'timestamp', 'reqID'
+        'author', 'title', 'body', 'template', 'timestamp'
     ];
 
     public function generate(): string {

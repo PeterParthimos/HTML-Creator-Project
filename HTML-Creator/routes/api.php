@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientRequestController;
+use App\Http\Controllers\FinalResponseController;
 use App\Models\ClientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/request', [ClientRequestController::class, 'getAll']);
 Route::post('/request', [ClientRequestController::class, 'newRequest']);
+
+Route::get('/responses', [FinalResponseController::class, 'getAll']);

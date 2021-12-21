@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\FinalResponseController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +15,7 @@ class FinalResponse extends Model
     protected $reqID, $author, $title, $body, $template, $timestamp;
 
     protected $fillable = [
-        'reqID', 'author', 'title', 'body', 'template', 'timestamp'
+        'requestID', 'filename', 'url', 'timestamp'
     ];
 
     public function new($req): string {
@@ -40,6 +41,8 @@ class FinalResponse extends Model
         }
 
         Storage::disk('s3')->put($filename, $html);
-        return Storage::disk('s3')->url($filename);
+        $url = Storage::disk('s3')->url($filename);
+
+        return (new FinalResponseController())->newResponse($req->id, $filename, $url, $req->timestamp);
     }
 }
